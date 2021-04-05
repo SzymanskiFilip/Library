@@ -8,18 +8,9 @@ let myLibrary = [
         "title": "Elon Musk Biography",
         "author": "Some dude!",
         "pages": 400
-    },
-    {
-        "title": "Edward snowden",
-        "author": "Some other dude!",
-        "pages": 380
-    },
-    {
-        "title": "Clean Architecture",
-        "author": "Uncle bob",
-        "pages": 444
     }
 ];
+
 
 function clearBooks(){
     let toDelete = document.querySelector('.books-list');
@@ -61,7 +52,6 @@ function displayBooks(){
         book.appendChild(pages);
         book.appendChild(deleteButton);
 
-        
 
         let booksList = document.querySelector('.books-list');
         booksList.appendChild(book);
@@ -110,5 +100,17 @@ function addBookToLibrary(ev){
     clearBooks();
     displayBooks();
 }
+
+function saveBooksToMemory(){
+    let books = JSON.stringify(myLibrary);
+    localStorage.setItem("Books", books);
+}
+
+function readBooksFromMemory(){
+    let fromMemory = localStorage.getItem("Books");
+    return fromMemory;
+}
+
+
 
 displayBooks();
