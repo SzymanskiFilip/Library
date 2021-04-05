@@ -1,0 +1,51 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+body {
+  background-color: #121212;
+}
+
+.baner {
+  text-align: center;
+  margin: 50px auto 10px auto;
+  color: whitesmoke;
+}
+
+.add-book{
+    text-align: center;
+    color: whitesmoke;
+    margin: 0 auto 10px auto;
+}
+
+.books {
+  background-color: #252525;
+  height: 800px;
+  width: 900px;
+  margin: 0 auto 0px auto;
+}
+
+.book {
+  padding: 25px;
+  text-align: center;
+}
+
+.book-property{
+  color: rgb(212, 191, 191);
+}
+
+.pop-up-form{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: green;
+  height: 600px;
+  width: 600px;
+}
+
+.unvisible{
+  visibility: hidden;
+}
