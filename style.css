@@ -14,14 +14,18 @@ body {
   color: whitesmoke;
 }
 
-.add-book{
+.add-book h1{
+    width: 300px;
     text-align: center;
     color: whitesmoke;
     margin: 0 auto 10px auto;
     transition: 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.add-book:hover{
+.add-book h1:hover{
   transform: scale(1.1);
   text-shadow: 1px 1px 1px white;
   cursor: pointer;
