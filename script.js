@@ -91,7 +91,6 @@ function Book(title, author, pages, id){
 submitBookButton.addEventListener('click', addBookToLibrary);
 
 
-
 function addBookToLibrary(ev){
     ev.preventDefault();
     let book = {
@@ -99,8 +98,15 @@ function addBookToLibrary(ev){
         author: document.getElementById('author').value,
         pages: document.getElementById('pages').value
     };
-    myLibrary.push(book);
+    if(book.title == "" || book.author == "" || book.pages == ""){
+        alert("ERROR THIS INPUT IS REQUIRED!");
+        return false;
+    } else {
+        myLibrary.push(book);
+    }
+
     document.forms[0].reset();
+    popUpForm.classList.toggle('unvisible');
     clearBooks();
     displayBooks();
 }
