@@ -86,7 +86,21 @@ body {
 }
 
 .pop-up-form button{
-  padding: 5px;
+  padding: 10px;
+  margin-top: 20px;
+  background-color: #263238;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.pop-up-form button:hover{
+  background-color: #37474f;
+  cursor: pointer;
 }
 
 .unvisible{
