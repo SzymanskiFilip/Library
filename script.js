@@ -2,14 +2,8 @@ let addBookButton = document.querySelector('.add-book');
 let popUpForm = document.querySelector('.pop-up-form');
 let submitBookButton = document.getElementById('submit-book');
 
-
-let myLibrary = [
-    {
-        "title": "Elon Musk Biography",
-        "author": "Some dude!",
-        "pages": 400
-    }
-];
+let myLibrary = [];
+let newArray = [];
 
 
 function clearBooks(){
@@ -55,6 +49,7 @@ function displayBooks(){
 
         let booksList = document.querySelector('.books-list');
         booksList.appendChild(book);
+
     }
 }
 
@@ -95,20 +90,15 @@ function addBookToLibrary(ev){
         myLibrary.push(book);
     }
 
+    
+    newArray.push(JSON.stringify(book));
+
+    localStorage.setItem("Books", newArray);
+
     document.forms[0].reset();
     popUpForm.classList.toggle('unvisible');
     clearBooks();
     displayBooks();
-}
-
-function saveBooksToMemory(){
-    let books = JSON.stringify(myLibrary);
-    localStorage.setItem("Books", books);
-}
-
-function readBooksFromMemory(){
-    let fromMemory = localStorage.getItem("Books");
-    return fromMemory;
 }
 
 
