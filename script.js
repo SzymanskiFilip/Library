@@ -2,6 +2,8 @@ let addBookButton = document.querySelector('.add-book');
 let popUpForm = document.querySelector('.pop-up-form');
 let submitBookButton = document.getElementById('submit-book');
 
+
+
 let myLibrary = [];
 let newArray = [];
 
@@ -56,6 +58,8 @@ function displayBooks(){
 function deleteBook(id){
     console.log(id)
     myLibrary.splice(id, 1);
+    newArray = myLibrary;
+    localStorage.setItem("Books", newArray);
     console.log(myLibrary);
     clearBooks();
     displayBooks();
@@ -90,9 +94,8 @@ function addBookToLibrary(ev){
         myLibrary.push(book);
     }
 
-    
+    //pushes the new book to array and sets the storage to the new array
     newArray.push(JSON.stringify(book));
-
     localStorage.setItem("Books", newArray);
 
     document.forms[0].reset();
